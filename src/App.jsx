@@ -5,6 +5,9 @@ import Footer from './components/Footer';
 import BlogPostsPage from './pages/BlogPostsPage';
 import IndividualPostPage from './pages/IndividualPostPage';
 import ContactPage from './pages/ContactPage';
+import ProtectedRoute from './components/ProtectedRoute';
+import LandingPage from './pages/LandingPage';
+import LoginPage from './pages/LoginPage';
 
 
 function App() {
@@ -14,7 +17,8 @@ function App() {
         <Header />
         
           <Routes>
-            <Route path="/" element={<BlogPostsPage />} />
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/posts" element={<BlogPostsPage />} />
             <Route path="/posts/:postId" element={<IndividualPostPage />} />
             <Route path="/contact" element={<ContactPage />} />

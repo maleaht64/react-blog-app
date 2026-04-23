@@ -1,12 +1,15 @@
 import {useParams} from "react-router-dom";
-import {useState, useEffect} from "react";
+import {useState, useEffect, useContext} from "react";
 import Comments from "../components/Comments";
 import axios from "axios";
+import { AuthContext } from "../context/AuthContext";
 
 function IndividualPostPage() {
     const { postId } = useParams();
+    const { user } = useContext(AuthContext);
+
     const [post, setPost] = useState(null);
-    const [user, setUser] = useState(null);
+    const [author, setAuthor] = useState(null);
 
      useEffect(() => {
     axios
@@ -14,7 +17,6 @@ function IndividualPostPage() {
       .then((response) => {
         setPost(response.data);
 
-        // get user AFTER post loads
         return axios.get(
           `https://jsonplaceholder.typicode.com/users/${response.data.userId}`
         );
@@ -49,8 +51,13 @@ function IndividualPostPage() {
                         <p><strong>Email:</strong> {user.email}</p>
                     </div>
                 )}
-
-                <Comments postId={postId} />
+                {user ? (
+                    <Comments postId={postId} />
+                ) : (
+                    <div className="comments">
+                        <p>Please log in to view and post comments.</p>
+                    </div>
+                )}
             </div>
         </main>
     );

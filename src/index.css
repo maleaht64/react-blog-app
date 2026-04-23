@@ -285,3 +285,86 @@ button:hover {
 .post-actions button:hover {
   opacity: 0.9;
 }
+
+.landing-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.landing-content {
+  max-width: 700px;
+  text-align: center;
+  background: rgba(255, 240, 246, 0.95);
+  padding: 2rem;
+  border-radius: 24px;
+  box-shadow: 0 10px 28px rgba(255, 105, 135, 0.15);
+}
+
+body.dark .landing-content {
+  background: rgba(60, 35, 45, 0.95);
+  color: #ffeef4;
+}
+
+.landing-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ff4d6d;
+}
+
+body.dark .landing-content h1 {
+  color: #ff8fb1;
+}
+
+.landing-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.landing-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.landing-btn {
+  text-decoration: none;
+  background: linear-gradient(135deg, #ff8fb1, #ff4d6d);
+  color: white;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.secondary-btn {
+  background: white;
+  color: #ff4d6d;
+  border: 2px solid #ff8fb1;
+}
+
+.login-box {
+  background: rgba(255, 240, 246, 0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(255, 105, 135, 0.15);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+body.dark .login-box {
+  background: rgba(60, 35, 45, 0.95);
+  color: #ffeef4;
+}
+
+.login-box h2 {
+  margin-bottom: 1rem;
+  color: #ff4d6d;
+}
+
+body.dark .login-box h2 {
+  color: #ff8fb1;
+}

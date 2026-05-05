@@ -16,15 +16,35 @@ body.dark {
   color: #ffeef4;
 }
 
+html,
+body,
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   transition: background 0.3s ease, color 0.3s ease;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
 }
 
 .app {
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  width: 100%;
 }
 
 /* Header */
@@ -238,11 +258,16 @@ button:hover {
 /* Footer */
 
 .footer {
-  margin-top: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   text-align: center;
   padding: 1rem;
   background: #5a2a3a;
   color: white;
+  z-index: 10;
 }
 
 /* Mobile */

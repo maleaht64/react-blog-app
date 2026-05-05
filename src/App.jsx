@@ -13,8 +13,10 @@ import LoginPage from './pages/LoginPage';
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="app">
         <Header />
+
+        <div className="content">
         
           <Routes>
             <Route path="/" element={<LandingPage />} />
@@ -23,6 +25,7 @@ function App() {
             <Route path="/posts/:postId" element={<IndividualPostPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
+        </div>
         
         <Footer />
       </div>
